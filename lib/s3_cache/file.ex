@@ -1,4 +1,4 @@
-defmodule S3EtsCache.File do
+defmodule S3Cache.File do
   use GenServer
 
   @error_timeout 5 * 1000
@@ -22,7 +22,7 @@ defmodule S3EtsCache.File do
   end
 
   def handle_call(:get, _from, state) do
-    case :ets.lookup(S3EtsCache, state.file) do
+    case :ets.lookup(S3Cache, state.file) do
       [] -> {:noreply, %{state | waiting: [_from | state.waiting]}}
       [{_, v}] -> v
     end

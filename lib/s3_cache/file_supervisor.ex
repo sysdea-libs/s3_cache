@@ -1,4 +1,4 @@
-defmodule S3EtsCache.FileSupervisor do
+defmodule S3Cache.FileSupervisor do
   use Supervisor
   require Logger
 
@@ -8,10 +8,10 @@ defmodule S3EtsCache.FileSupervisor do
 
   def init({event_manager}) do
     children = [
-      worker(S3EtsCache.File, [S3EtsCache, event_manager], restart: :temporary)
+      worker(S3Cache.File, [S3Cache, event_manager], restart: :temporary)
     ]
 
-    Logger.info("Starting S3EtsCache.FileSupervisor")
+    Logger.info("Starting S3Cache.FileSupervisor")
 
     supervise(children, strategy: :simple_one_for_one)
   end

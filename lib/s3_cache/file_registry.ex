@@ -1,4 +1,4 @@
-defmodule S3EtsCache.FileRegistry do
+defmodule S3Cache.FileRegistry do
   use GenServer
   require Logger
 
@@ -15,7 +15,7 @@ defmodule S3EtsCache.FileRegistry do
   end
 
   def init({s3files}) do
-    Logger.info("Starting S3EtsCache.FileRegistry")
+    Logger.info("Starting S3Cache.FileRegistry")
     files = HashDict.new
     refs = HashDict.new
     {:ok, %{files: files, refs: refs, s3files: s3files}}

@@ -1,15 +1,15 @@
-defmodule S3EtsCache.Mixfile do
+defmodule S3Cache.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :s3_ets_cache,
+    [app: :s3_cache,
      version: "0.0.1",
      elixir: "~> 1.0",
      deps: deps,
      package: [
       contributors: ["Chris Spencer"],
       licenses: ["MIT"],
-      links: %{github: "https://github.com/sysdea/s3_ets_cache"}
+      links: %{github: "https://github.com/sysdea/s3_cache"}
      ],
      description: "A refreshing cache for S3 files, stored in ETS."]
   end
@@ -19,7 +19,7 @@ defmodule S3EtsCache.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [applications: [:logger, :httpoison],
-     mod: {S3EtsCache, []}]
+     mod: {S3Cache, []}]
   end
 
   # Dependencies can be Hex packages:
