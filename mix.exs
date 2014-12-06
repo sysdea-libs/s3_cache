@@ -9,7 +9,7 @@ defmodule S3Cache.Mixfile do
      package: [
       contributors: ["Chris Spencer"],
       licenses: ["MIT"],
-      links: %{github: "https://github.com/sysdea/s3_cache"}
+      links: %{github: "https://github.com/sysdea-libs/s3_cache"}
      ],
      description: "A refreshing cache for S3 files, stored in ETS."]
   end
